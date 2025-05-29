@@ -1,4 +1,4 @@
-package Ejercicio4.BaseDeDatos;
+package Ejercicio4.BD;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

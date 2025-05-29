@@ -4,14 +4,12 @@ public class Participante {
     private String nombre;
     private String telefono;
     private String region;
-    private String email;
 
-    public Participante(String nombre, String telefono, String region, String email) {
-        validarParticipante(nombre,telefono,region,email);
+    public Participante(String nombre, String telefono,String region) {
+        validarParticipante(nombre,telefono,region);
         this.nombre = nombre;
         this.telefono=telefono;
         this.region=region;
-        this.email = email;
     }
 
     public String nombre(){
@@ -23,10 +21,8 @@ public class Participante {
     public String region(){
         return region;
     }
-    public String email() {
-        return email;
-    }
-    private void validarParticipante(String nombre, String telefono,String region,String email) {
+
+    private void validarParticipante(String nombre, String telefono,String region) {
         if (nombre.isEmpty()) {
             throw new IllegalArgumentException("Debe cargar un nombre");
         }
@@ -41,14 +37,10 @@ public class Participante {
                 !region.equals("Europa")) {
             throw new IllegalArgumentException("Región desconocida. Las conocidas son: China, US, Europa");
         }
-        if(email.isEmpty()){
-            throw new IllegalArgumentException("Debe cargar un email");
-        }
     }
     private boolean validarTelefono(String telefono) {
         String regex = "\\d{4}-\\d{6}";
         return telefono.matches(regex);
     }
-
 
 }

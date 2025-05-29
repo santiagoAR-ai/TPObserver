@@ -6,8 +6,8 @@ public class Main {
         var clima=new Medidor(sitioWeb);
         var guardar= new GuardarTemperatura();
         var aviso= new AvisoTemperatura();
-        clima.AgregarObservador(guardar);
-        clima.AgregarObservador(aviso);
+        clima.agregarObservador(guardar);
+        clima.agregarObservador(aviso);
         System.out.println(clima.leerTemperatura());
     }
 }

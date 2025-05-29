@@ -1,14 +1,14 @@
-package Ejercicio4.BaseDeDatos;
+package Ejercicio4.BD;
 
+import Ejercicio4.Modelo.IJDBCParticipantes;
 import Ejercicio4.Modelo.Participante;
-
 import java.sql.SQLException;
 
-public class JDBCagregarParticipante {
-    private Conn dbConn;
-
-    public void insertarParticipante(Participante participante) throws SQLException {
-        var conexion = this.dbConn.open();
+public class JDBCParticipante implements IJDBCParticipantes {
+    @Override
+    public void guardarParticipante(Participante participante) throws SQLException {
+        var Conn= new Conn();
+        var conexion= Conn.open();
         var st = conexion.prepareStatement(
                 "insert into participantes(nombre, telefono, region) values(?,?,?)");
         try {
