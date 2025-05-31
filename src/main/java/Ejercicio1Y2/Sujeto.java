@@ -9,10 +9,6 @@ public class Sujeto {
         listaObservadores.add(observador);
     }
 
-    public void eliminarObservador(Observador observador) {
-        listaObservadores.remove(observador);
-    }
-
     protected void notificarObservadores(double temperatura) {
         for (Observador observador : listaObservadores) {
             observador.update(temperatura);
